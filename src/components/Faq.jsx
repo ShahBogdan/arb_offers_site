@@ -8,9 +8,9 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 export default function FaqComponent({ items }) {
   return (
     <div className="w-full md:w-2/3 mx-auto">
-      {items.map((el) => {
+      {items.map((el, i) => {
         return (
-          <div key={items.id} className="">
+          <div key={i} className="">
             <Disclosure key={el.id} as={"div"} className={""}>
               <DisclosureButton className="group  items-center justify-between border w-full my-3 p-3 rounded-md bg-gradient-to-r from-indigo-500 via-blue-500 to-indigo-400 text-white group flex  gap-2 font-semibold text-xl ">
                 <span>{el.question}</span>
