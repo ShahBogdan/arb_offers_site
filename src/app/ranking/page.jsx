@@ -4,6 +4,9 @@ import PagesH1 from "@/components/PagesH1";
 import PagesH2 from "@/components/PagesH2";
 import { getSettings } from "@/api/settings";
 import PageSeoText from "@/components/PageSeoText";
+export const revalidate = 60;
+export const dynamicParams = true;
+
 export async function generateMetadata({ params, searchParams }, parent) {
   const settings = await getSettings();
   const imagePath = process.env.MEDIA_DOMAIN_PATH;

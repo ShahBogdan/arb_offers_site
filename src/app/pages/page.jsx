@@ -1,6 +1,7 @@
 import { getSettings } from "@/api/settings";
 import { getPages } from "@/api/pages";
-
+export const revalidate = 60;
+export const dynamicParams = true;
 export async function generateMetadata({ params, searchParams }, parent) {
   const settings = await getSettings();
   const imagePath = process.env.MEDIA_DOMAIN_PATH;
