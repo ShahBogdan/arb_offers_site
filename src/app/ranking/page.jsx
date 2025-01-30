@@ -25,6 +25,18 @@ export async function generateMetadata({ params, searchParams }, parent) {
   };
 }
 
+const TableItem = ({ item }) => {
+  return (
+    <a
+      href={item ? item.offer_url : null}
+      target=" _blank"
+      className=" text-2xl text-center uppercase mt-2"
+    >
+      {item ? item.name : ""}
+    </a>
+  );
+};
+
 export default async function () {
   const offersList = await getOffers();
   const imagePath = process.env.MEDIA_DOMAIN_PATH;
@@ -46,18 +58,6 @@ export default async function () {
   const faster_offer = () => {
     let res = offersList.sort((a, b) => a.time_to_get - b.time_to_get);
     return res[0];
-  };
-
-  const TableItem = ({ item }) => {
-    return (
-      <a
-        href={item ? item.offer_url : null}
-        target=" _blank"
-        className=" text-2xl text-center uppercase mt-2"
-      >
-        {item.name}
-      </a>
-    );
   };
 
   return (
