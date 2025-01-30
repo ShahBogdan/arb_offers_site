@@ -51,7 +51,7 @@ export default async function () {
   const TableItem = ({ item }) => {
     return (
       <a
-        href={item.offer_url}
+        href={item.offer_url ? item.offer_url : null}
         target=" _blank"
         className=" text-2xl text-center uppercase mt-2"
       >
