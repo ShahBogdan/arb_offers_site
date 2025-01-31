@@ -38,8 +38,8 @@ export default ({ offer, imagePath }) => {
   console.log("offer", offer);
   return (
     <div className="inline-block w-full  relative  ">
-      {offer.is_recommended && (
-        <div className=" absolute top-2 left-1 border border-green-600 bg-gray-100 text-green-900 rounded-lg  px-5">
+      {offer.recommended && (
+        <div className=" absolute top-2 left-1 bg-sky-800  text-white rounded-lg  px-5">
           Рекомендовано
         </div>
       )}
@@ -67,11 +67,13 @@ export default ({ offer, imagePath }) => {
             <MainInfoItem
               label="Реальна річна ставка"
               text={
-                "від " +
-                offer.real_annual_rate_from +
-                " до " +
-                offer.real_annual_rate_to +
-                " %"
+                offer.real_annual_rate_from == offer.real_annual_rate_to
+                  ? "від " +
+                    offer.real_annual_rate_from +
+                    " до " +
+                    offer.real_annual_rate_to +
+                    " %"
+                  : offer.real_annual_rate_from + " %"
               }
             />
             <MainInfoItem

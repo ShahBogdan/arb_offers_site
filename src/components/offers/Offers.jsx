@@ -21,7 +21,7 @@ export default ({ offers, imagePath, show_filter = true }) => {
                 filteringOffers={filteringOffers}
                 setFilteringOffers={setFilteringOffers}
               />
-              <div className=" flex flex-row justify-between align-middle items-center w-full my-5">
+              <div className=" flex flex-col md:flex-row justify-between align-middle items-center w-full my-5">
                 <div className="flex-1  text-gray-700">
                   <span className=" font-bold">Важливо!</span> Компанії не
                   розглядають заявки від користувачів, які вже подавали запит на

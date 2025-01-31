@@ -7,7 +7,7 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 export default function FaqComponent({ items }) {
   return (
-    <div className="w-full md:w-2/3 mx-auto">
+    <div className="w-full p-5 md:p-0 md:w-2/3 mx-auto">
       {items.map((el, i) => {
         return (
           <div key={i} className="">

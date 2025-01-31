@@ -67,7 +67,7 @@ export default async function () {
     <div>
       <PagesH1 h1={settings.ranking_page_h1} />
 
-      <div className=" flex flex-col md:flex-row mx-auto w-full justify-between gap-2">
+      <div className=" flex flex-col md:flex-row mx-auto w-full justify-between gap-2 p-5 md:p-0">
         <div className="flex-1 p-5 bg-white shadow-md rounded-md">
           <div className=" text-gray-600">Найменьша річна ставка</div>
           <TableItem item={min_real_annual_rate()} />

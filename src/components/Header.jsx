@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Star } from "./icons/Index";
+import { XMarkIcon, Bars3Icon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 export default function Header({ menuItems, settings, imagePath }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -22,14 +23,13 @@ export default function Header({ menuItems, settings, imagePath }) {
             />
           </Link>
         </div>
-        <div className="flex lg:hidden">
+        <div className="flex lg:hidden align-middle  items-center">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
           >
-            <span className="sr-only">Open main menu</span>
-            <Star aria-hidden="true" className=" text-red-600 fill-current " />
+            <Bars3Icon aria-hidden="true" className="size-6" />
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
@@ -69,35 +69,32 @@ export default function Header({ menuItems, settings, imagePath }) {
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
             >
               <span className="sr-only">Close menu</span>
-              <Star
-                aria-hidden="true"
-                className=" text-blue-600 fill-current "
-              />
+
+              <XMarkIcon aria-hidden="true" className="size-6" />
             </button>
           </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                <Link href={"/faq"} className=" font-semibold text-gray-900">
-                  FAQ (Запитання\відповідь)
-                </Link>
+          <div className="mt-6 flex flex-col gap-5">
+            <Link
+              href={"/faq"}
+              className=" border border-gray-200 p-3 rounded-sm font-semibold text-gray-900"
+            >
+              FAQ (Запитання\відповідь)
+            </Link>
 
-                {settings.show_pages && (
-                  <Link
-                    href={"/pages"}
-                    className=" font-semibold text-gray-900"
-                  >
-                    Статті
-                  </Link>
-                )}
-                <Link
-                  href={"/ranking"}
-                  className=" font-semibold text-gray-900"
-                >
-                  Рейтинг МФО
-                </Link>
-              </div>
-            </div>
+            {settings.show_pages && (
+              <Link
+                href={"/pages"}
+                className=" border border-gray-200 p-3 rounded-sm font-semibold text-gray-900"
+              >
+                Статті
+              </Link>
+            )}
+            <Link
+              href={"/ranking"}
+              className="border border-gray-200 p-3 rounded-sm font-semibold text-gray-900"
+            >
+              Рейтинг МФО
+            </Link>
           </div>
         </DialogPanel>
       </Dialog>
