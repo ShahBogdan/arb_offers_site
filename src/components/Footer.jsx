@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const navigation = {
@@ -70,8 +71,15 @@ export default ({ text }) => {
   return (
     <footer className="bg-gray-900 mt-10">
       <div className="mx-auto max-w-7xl overflow-hidden p-5  ">
-        <div className="mt-16 flex justify-center gap-x-10"></div>
-        <p className="mt-10 text-center text-sm/6 text-gray-400">{text}</p>
+        <div className=" flex flex-col justify-center ">
+          <p className=" text-center text-sm/6 text-gray-400">{text}</p>
+          <Link
+            className="text-center text-gray-400 mt-3 font-semibold"
+            href={"/policy"}
+          >
+            Політика конфіденційності
+          </Link>
+        </div>
       </div>
     </footer>
   );

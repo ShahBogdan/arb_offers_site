@@ -2,7 +2,8 @@ import { getSettings } from "@/api/settings";
 import { getFaq } from "@/api/faq";
 import FaqComponent from "@/components/Faq";
 import PageSeoText from "@/components/PageSeoText";
-
+export const revalidate = 60;
+export const dynamicParams = true;
 export async function generateMetadata({ params, searchParams }, parent) {
   const settings = await getSettings();
   const imagePath = process.env.MEDIA_DOMAIN_PATH;

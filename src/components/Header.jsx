@@ -15,11 +15,10 @@ export default function Header({ menuItems, settings, imagePath }) {
       >
         <div className="flex lg:flex-1">
           <Link href={"/"} className="-m-1.5 p-1.5">
-            <span className="sr-only">{settings.site_name}</span>
             <img
-              alt=""
+              alt={settings.site_name}
               src={imagePath + settings.logo_img}
-              className="h-8 w-auto"
+              className="h-14 w-auto"
             />
           </Link>
         </div>

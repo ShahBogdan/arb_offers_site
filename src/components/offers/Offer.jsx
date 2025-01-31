@@ -23,7 +23,7 @@ const MainTagItem = ({ text, active, popoverText = null }) => {
         />
       )}
       <span className=" text-gray-700">{text}</span>
-      {/* {popoverText && <PopoverBlock text={popoverText} />} */}
+      {popoverText && <PopoverBlock text={popoverText} />}
     </div>
   );
 };
@@ -35,8 +35,14 @@ const handleMailClick = (e, offer) => {
 
 export default ({ offer, imagePath }) => {
   const [showInfo, setShowInfo] = useState(false);
+  console.log("offer", offer);
   return (
-    <div className="inline-block w-full  ">
+    <div className="inline-block w-full  relative  ">
+      {offer.is_recommended && (
+        <div className=" absolute top-2 left-1 border border-green-600 bg-gray-100 text-green-900 rounded-lg  px-5">
+          Рекомендовано
+        </div>
+      )}
       <div className="flex flex-col mt-4 shadow-lg  border-gray-300 rounded-md p-5 bg-gray-50 border border-transparent hover:border-green-500 ">
         <h3 className=" font-semibold">
           <span className=" font-light">Кредит від:</span> {offer.name}
@@ -85,20 +91,20 @@ export default ({ offer, imagePath }) => {
             <div className="grid grid-cols-2 gap-2 ">
               <MainTagItem
                 text="Пере-кредит."
-                active={offer.on_lending}
+                active={!offer.on_lending}
                 popoverText={
                   "Можна отримати позику, навіть якщо у вас є незакриті кредити в інших банках чи організаціях."
                 }
               />
-              <MainTagItem text="На картку" active={offer.bank_card} />
+              <MainTagItem text="На картку" active={!offer.bank_card} />
               <MainTagItem
                 popoverText={
                   "BankID дозволяє автоматично заповнити особисті дані, підтягнувши їх з державних реєстрів "
                 }
                 text="BankID"
-                active={offer.bankID}
+                active={!offer.bankID}
               />
-              <MainTagItem text="Готівкою" active={offer.cash} />
+              <MainTagItem text="Готівкою" active={!offer.cash} />
             </div>
             <div className="inline-block mt-2 md:mt-0">
               <button

@@ -5,9 +5,9 @@ import PopoverBlock from "../PopoverBlock";
 const DetailsItem = ({ label, text, popoverText = null }) => {
   return (
     <div className=" flex flex-row justify-between">
-      <div className=" text-gray-700 flex flex-row gap-1">
+      <div className=" text-gray-700 flex flex-row gap-1 normal-case">
         {label}
-        {/* {popoverText && <PopoverBlock text={popoverText} />} */}
+        {popoverText && <PopoverBlock text={popoverText} />}
       </div>
       <span className=" text-right">{text}</span>
     </div>
@@ -21,7 +21,10 @@ const ItemsMap = ({ items, keyLabel, label, popoverText = null }) => {
       <ul className="ml-10">
         {items.map((item) => {
           return (
-            <li className=" list-item list-disc" key={keyLabel + item.id}>
+            <li
+              className=" list-item list-disc normal-case"
+              key={keyLabel + item.id}
+            >
               {item.text}
             </li>
           );
