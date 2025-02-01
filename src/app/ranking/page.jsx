@@ -33,7 +33,7 @@ const TableItem = ({ item }) => {
     <a
       href={item ? item.offer_url : null}
       target=" _blank"
-      className=" text-2xl text-center uppercase mt-2"
+      className=" text-2xl text-center uppercase mt-2 text-indigo-900 font-bold"
     >
       {item ? item.name : ""}
     </a>
@@ -67,7 +67,7 @@ export default async function () {
     <div>
       <PagesH1 h1={settings.ranking_page_h1} />
 
-      <div className=" flex flex-col md:flex-row mx-auto w-full justify-between gap-2 p-5 md:p-0">
+      <div className=" flex flex-col md:flex-row mx-auto w-full justify-between gap-2 px-5 py-2 md:py-5 md:p-0">
         <div className="flex-1 p-5 bg-white shadow-md rounded-md">
           <div className=" text-gray-600">Найменьша річна ставка</div>
           <TableItem item={min_real_annual_rate()} />
@@ -82,7 +82,7 @@ export default async function () {
         </div>
       </div>
       <PagesH2 h2={"Всі пропозиції по рейтингу:"} />
-      <div className="my-5">
+      <div className="my-2 md:my-5">
         <Offers show_filter={false} offers={offersList} imagePath={imagePath} />
       </div>
       <PageSeoText text={settings.ranking_page_text} />

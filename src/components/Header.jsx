@@ -1,13 +1,11 @@
 "use client";
 import { useState } from "react";
-import { Dialog, DialogPanel } from "@headlessui/react";
-import { Star } from "./icons/Index";
+import { Button, Dialog, DialogPanel } from "@headlessui/react";
 import { XMarkIcon, Bars3Icon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 export default function Header({ menuItems, settings, imagePath }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  console.log("menuItems", menuItems);
   return (
     <header className="bg-white">
       <nav
@@ -55,7 +53,11 @@ export default function Header({ menuItems, settings, imagePath }) {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link href={"/"} className="-m-1.5 p-1.5">
+            <Link
+              href={"/"}
+              className="-m-1.5 p-1.5"
+              onClick={(e) => setMobileMenuOpen(false)}
+            >
               <span className="sr-only">{settings.site_name}</span>
               <img
                 alt=""
@@ -68,7 +70,7 @@ export default function Header({ menuItems, settings, imagePath }) {
               onClick={() => setMobileMenuOpen(false)}
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
             >
-              <span className="sr-only">Close menu</span>
+              <span className="sr-only">Закрити меню</span>
 
               <XMarkIcon aria-hidden="true" className="size-6" />
             </button>
@@ -76,6 +78,7 @@ export default function Header({ menuItems, settings, imagePath }) {
           <div className="mt-6 flex flex-col gap-5">
             <Link
               href={"/faq"}
+              onClick={(e) => setMobileMenuOpen(false)}
               className=" border border-gray-200 p-3 rounded-sm font-semibold text-gray-900"
             >
               FAQ (Запитання\відповідь)
@@ -83,6 +86,7 @@ export default function Header({ menuItems, settings, imagePath }) {
 
             {settings.show_pages && (
               <Link
+                onClick={(e) => setMobileMenuOpen(false)}
                 href={"/pages"}
                 className=" border border-gray-200 p-3 rounded-sm font-semibold text-gray-900"
               >
@@ -90,6 +94,7 @@ export default function Header({ menuItems, settings, imagePath }) {
               </Link>
             )}
             <Link
+              onClick={(e) => setMobileMenuOpen(false)}
               href={"/ranking"}
               className="border border-gray-200 p-3 rounded-sm font-semibold text-gray-900"
             >

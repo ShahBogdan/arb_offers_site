@@ -12,7 +12,7 @@ export default function FaqComponent({ items }) {
         return (
           <div key={i} className="">
             <Disclosure key={el.id} as={"div"} className={""}>
-              <DisclosureButton className="group  items-center justify-between border w-full my-3 p-3 rounded-md bg-gradient-to-r from-indigo-500 via-blue-500 to-indigo-400 text-white group flex  gap-2 font-semibold text-xl ">
+              <DisclosureButton className="group text-left  items-center justify-between border w-full my-3 p-3 rounded-md bg-gradient-to-r from-indigo-500 via-blue-500 to-indigo-400 text-white group flex  gap-2 font-semibold text-xl ">
                 <span>{el.question}</span>
                 <ChevronDownIcon className="size-5 fill-white/60 group-data-[hover]:fill-white/50 group-data-[open]:rotate-180" />
               </DisclosureButton>

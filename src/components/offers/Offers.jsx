@@ -28,7 +28,7 @@ export default ({ offers, imagePath, show_filter = true }) => {
                   кредит або мають активний кредит протягом останніх 90 днів.
                 </div>
                 <div className=" flex-1 flex flex-row justify-end align-middle items-center">
-                  <div className=" w-fit text-center border border-green-700 text-green-700 font-light px-4 py-2 rounded-md">
+                  <div className=" my-3 md:my-0 w-fit text-center border border-green-700 text-green-700 font-light px-4 py-2 rounded-md">
                     Знайдено {filteringOffers.length}{" "}
                     {filteringOffers.length < 5 ? "компанії" : "компаній"}
                   </div>

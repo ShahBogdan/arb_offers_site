@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#pageSeoText ol {
+    padding-left: 40px;
+}
+
+#pageSeoText h2 {
+    font-size: x-large;
+    font-weight: bold;
+    color: rgb(41, 40, 40);
+}
