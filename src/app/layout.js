@@ -29,7 +29,7 @@ export default async function RootLayout({ children }) {
             <Footer text={settings.footer_text} />
           </div>
         </div>
-        <GoogleAnalytics gtmId="G-GTGK1XPBZP" />
+        <GoogleAnalytics gaId="G-GTGK1XPBZP" />
       </body>
     </html>
   );
