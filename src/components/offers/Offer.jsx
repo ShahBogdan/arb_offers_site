@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import OfferInfo from "./OfferInfo";
 import { Xcircle, Check, Document } from "../icons/Index";
 import PopoverBlock from "../PopoverBlock";
+import { sendGTMEvent } from "@next/third-parties/google";
+
 const MainInfoItem = ({ label, text }) => {
   return (
     <div className=" flex flex-col text-sm ">
@@ -30,7 +32,7 @@ const MainTagItem = ({ text, active, popoverText = null }) => {
 
 const handleMainClick = (e, offer) => {
   e.preventDefault();
-  window.gtag("event", "purchase", {});
+  sendGTMEvent({ event: "purchase", value: offer.name });
   setTimeout(() => {
     window.location.href = offer.offer_url;
   }, 500);
