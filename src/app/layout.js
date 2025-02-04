@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getMenuPages } from "@/api/pages";
 import { getSettings } from "@/api/settings";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 
 export default async function RootLayout({ children }) {
@@ -29,6 +30,7 @@ export default async function RootLayout({ children }) {
             <Footer text={settings.footer_text} />
           </div>
         </div>
+        <GoogleAnalytics gaId="G-GTGK1XPBZP" />
       </body>
     </html>
   );

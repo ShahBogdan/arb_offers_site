@@ -28,9 +28,12 @@ const MainTagItem = ({ text, active, popoverText = null }) => {
   );
 };
 
-const handleMailClick = (e, offer) => {
+const handleMainClick = (e, offer) => {
   e.preventDefault();
-  window.location.href = offer.offer_url;
+  window.gtag("event", "purchase", {});
+  setTimeout(() => {
+    window.location.href = offer.offer_url;
+  }, 500);
 };
 
 export default ({ offer, imagePath }) => {
@@ -110,7 +113,7 @@ export default ({ offer, imagePath }) => {
             </div>
             <div className="inline-block mt-2 md:mt-0">
               <button
-                onClick={(e) => handleMailClick(e, offer)}
+                onClick={(e) => handleMainClick(e, offer)}
                 className=" w-full shadow-md bg-green-600 text-white text-lg font-bold rounded-md p-2 text-center hover:bg-green-700 cursor-pointer"
               >
                 Оформити
