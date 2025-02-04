@@ -10,14 +10,14 @@ export default function Header({ menuItems, settings, imagePath }) {
     <header className="bg-white">
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between px-6 py-1 lg:px-8"
       >
         <div className="flex lg:flex-1">
           <Link href={"/"} className="-m-1.5 p-1.5">
             <img
               alt={settings.site_name}
               src={imagePath + settings.logo_img}
-              className="h-14 w-auto"
+              className=" h-11 w-auto"
             />
           </Link>
         </div>

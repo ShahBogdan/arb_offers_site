@@ -4,9 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getMenuPages } from "@/api/pages";
 import { getSettings } from "@/api/settings";
-import { GoogleTagManager } from '@next/third-parties/google'
-
-
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export default async function RootLayout({ children }) {
   const menuItems = await getMenuPages();
@@ -31,7 +29,7 @@ export default async function RootLayout({ children }) {
             <Footer text={settings.footer_text} />
           </div>
         </div>
-        <GoogleTagManager gtmId="G-GTGK1XPBZP" />
+        <GoogleAnalytics gtmId="G-GTGK1XPBZP" />
       </body>
     </html>
   );

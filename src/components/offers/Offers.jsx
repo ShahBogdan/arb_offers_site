@@ -21,14 +21,14 @@ export default ({ offers, imagePath, show_filter = true }) => {
                 filteringOffers={filteringOffers}
                 setFilteringOffers={setFilteringOffers}
               />
-              <div className=" flex flex-col md:flex-row justify-between align-middle items-center w-full my-5">
+              <div className="hidden md:flex  flex-col md:flex-row justify-between align-middle items-center w-full my-5">
                 <div className="flex-1  text-gray-700">
-                  <span className=" font-bold">Важливо!</span> Компанії не
-                  розглядають заявки від користувачів, які вже подавали запит на
-                  кредит або мають активний кредит протягом останніх 90 днів.
+                  <span className=" font-bold">Важливо!</span>  Для підвищення
+                  шансів ви можете подати декілька заявок вкомпанії в яких ви не
+                  отримували відмову, або не кредит протягом останніх 90 днів.
                 </div>
                 <div className=" flex-1 flex flex-row justify-end align-middle items-center">
-                  <div className=" my-3 md:my-0 w-fit text-center border border-green-700 text-green-700 font-light px-4 py-2 rounded-md">
+                  <div className="  my-3 md:my-0 w-fit text-center border border-green-700 text-green-700 font-light px-4 py-2 rounded-md">
                     Знайдено {filteringOffers.length}{" "}
                     {filteringOffers.length < 5 ? "компанії" : "компаній"}
                   </div>

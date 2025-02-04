@@ -33,7 +33,7 @@ export default async function Home() {
 
   return (
     <main className="">
-      <h1 className="my-5 p-5 md:p-0 text-4xl font-semibold text-gray-700">
+      <h1 className=" my-1 md:my-5 p-5 md:p-0  text-xl md:text-4xl font-semibold text-gray-700">
         {settings.main_page_h1}
       </h1>
       <Offers offers={offersList} imagePath={imagePath} />

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import OfferInfo from "./OfferInfo";
 import { Xcircle, Check, Document } from "../icons/Index";
 import PopoverBlock from "../PopoverBlock";
-import { sendGTMEvent } from "@next/third-parties/google";
+import { sendGAEvent } from "@next/third-parties/google";
 
 const MainInfoItem = ({ label, text }) => {
   return (
@@ -32,7 +32,7 @@ const MainTagItem = ({ text, active, popoverText = null }) => {
 
 const handleMainClick = (e, offer) => {
   e.preventDefault();
-  sendGTMEvent({ event: "purchase", value: offer.name });
+  sendGAEvent("event", "purchase", { value: offer.name });
   setTimeout(() => {
     window.location.href = offer.offer_url;
   }, 500);
@@ -42,7 +42,7 @@ export default ({ offer, imagePath }) => {
   const [showInfo, setShowInfo] = useState(false);
   console.log("offer", offer);
   return (
-    <div className="inline-block w-full  relative  ">
+    <div className="inline-block w-full  relative mt-5  ">
       {offer.recommended && (
         <div className=" absolute top-2 left-1 bg-sky-800  text-white rounded-lg  px-5">
           Рекомендовано
