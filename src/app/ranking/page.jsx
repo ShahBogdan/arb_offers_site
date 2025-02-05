@@ -83,7 +83,7 @@ export default async function () {
       </div>
       <PagesH2 h2={"Всі пропозиції по рейтингу:"} />
       <div className="my-2 md:my-5">
-        <Offers show_filter={false} offers={offersList} imagePath={imagePath} />
+        <Offers show_filter={true} offers={offersList} imagePath={imagePath} />
       </div>
       <PageSeoText text={settings.ranking_page_text} />
       <PageSeoText text={settings.text_for_google_term} />

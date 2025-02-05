@@ -42,7 +42,7 @@ export default ({ offer, imagePath }) => {
   const [showInfo, setShowInfo] = useState(false);
   console.log("offer", offer);
   return (
-    <div className="inline-block w-full  relative mt-5  ">
+    <div className="inline-block w-full  relative mt-0 md:mt-5  ">
       {offer.recommended && (
         <div className=" absolute top-2 left-1 bg-sky-800  text-white rounded-lg  px-5">
           Рекомендовано
@@ -60,7 +60,7 @@ export default ({ offer, imagePath }) => {
               src={imagePath + offer.image}
             />
           </div>
-          <div className="flex-1 grid grid-rows-3 md:grid-rows-2 grid-flow-col  gap-1 md:gap-4">
+          <div className="flex-1 grid grid-rows-3 md:grid-rows-2 grid-flow-col  gap-0 md:gap-4">
             <MainInfoItem
               label="Перший кредит"
               text={"до" + " " + offer.first_amount + " " + "грн."}

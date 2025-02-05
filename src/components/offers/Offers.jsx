@@ -15,7 +15,7 @@ export default ({ offers, imagePath, show_filter = true }) => {
       {filteringOffers && (
         <>
           {show_filter && (
-            <>
+            <div className=" mt-5">
               <Filter
                 offers={offers}
                 filteringOffers={filteringOffers}
@@ -34,9 +34,8 @@ export default ({ offers, imagePath, show_filter = true }) => {
                   </div>
                 </div>
               </div>
-            </>
+            </div>
           )}
-
           {filteringOffers.map((offer, index) => {
             return <Offer imagePath={imagePath} offer={offer} key={index} />;
           })}

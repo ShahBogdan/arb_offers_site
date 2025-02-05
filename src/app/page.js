@@ -33,10 +33,10 @@ export default async function Home() {
 
   return (
     <main className="">
-      <h1 className=" my-1 md:my-5 p-5 md:p-0  text-xl md:text-4xl font-semibold text-gray-700">
+      <h1 className=" my-1 md:my-5 px-5 py-2 md:px-0 md:py-0  text-xl md:text-4xl font-semibold text-gray-700">
         {settings.main_page_h1}
       </h1>
-      <Offers offers={offersList} imagePath={imagePath} />
+      <Offers offers={offersList} show_filter={false} imagePath={imagePath} />
       <div className="my-5 border border-gray-200 py-10 bg-white rounded-md">
         <h3 className="font-bold text-xl text-center text-gray-600">Найчастіші запитання</h3>
         <FaqComponent items={faq_list} />
