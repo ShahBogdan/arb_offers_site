@@ -31,11 +31,8 @@ const MainTagItem = ({ text, active, popoverText = null }) => {
 };
 
 const handleMainClick = (e, offer) => {
-  e.preventDefault();
+  // e.preventDefault();
   sendGAEvent("event", "purchase", { value: offer.name });
-  setTimeout(() => {
-    window.location.href = offer.offer_url;
-  }, 500);
 };
 
 export default ({ offer, imagePath }) => {
@@ -86,7 +83,7 @@ export default ({ offer, imagePath }) => {
               text={offer.percent_per_day + " %"}
             />
             <MainInfoItem
-              label="Термін кредиту"
+              label="Термін договору"
               text={
                 offer.term_from == offer.term_to
                   ? offer.term_from + " днів"
@@ -114,12 +111,14 @@ export default ({ offer, imagePath }) => {
               <MainTagItem text="Готівкою" active={!offer.cash} />
             </div>
             <div className="inline-block mt-2 md:mt-0">
-              <button
+              <a
+                href={offer.offer_url}
+                target="_blank"
                 onClick={(e) => handleMainClick(e, offer)}
-                className=" w-full shadow-md bg-green-600 text-white text-lg font-bold rounded-md p-2 text-center hover:bg-green-700 cursor-pointer"
+                className=" block w-full shadow-md bg-green-600 text-white text-lg font-bold rounded-md p-2 text-center hover:bg-green-700 cursor-pointer"
               >
                 Оформити
-              </button>
+              </a>
 
               <button
                 onClick={(e) => setShowInfo(!showInfo)}
