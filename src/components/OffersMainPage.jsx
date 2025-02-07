@@ -117,18 +117,7 @@ export default ({ offers, imagePath }) => {
                   text={`від 18 до ${offer.age}`}
                 />
               </div>
-              <a
-                href={offer.basic_characteristics_href}
-                className="text-center  text-sm text-orange-600 underline"
-              >
-                Істотні характеристики послуги
-              </a>
-              <a
-                href={offer.user_warning}
-                className="text-center  text-sm text-orange-600 underline"
-              >
-                Попередження для користувача про наслідки
-              </a>
+
               <MainBtn offer_url={offer.offer_url} />
             </div>
           );
