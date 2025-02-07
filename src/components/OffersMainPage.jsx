@@ -78,8 +78,8 @@ export default ({ offers, imagePath }) => {
               key={index}
               className="border border-gray-200 flex flex-col p-2 gap-1 bg-gray-50 rounded-md"
             >
-              <div className="flex border border-gray-200 rounded-md items-center justify-center bg-white">
-                <div className="relative w-full">
+              <div className="relative border border-gray-200 rounded-md  bg-white">
+                <div className="flex w-full items-center justify-center">
                   <img
                     alt={"кредит від" + offer.name}
                     className={"object-contain  w-40 h-20 p-4 "}
